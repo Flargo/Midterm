@@ -32,12 +32,12 @@ void loop()
   }
   if difficulty <= 120 && difficulty > 60); //hard 
    {
-   for(armangle = 5; armangle <= 90; armangle += 2) // tells the arm to go from 5 degrees to 90 
-  {                                                          // The potentiometer controls the speed/difficulty
+   for(armangle = 5; armangle <= 90; armangle += 2)
+  {                                                          
     arm.write(armangle);           
     delay(10);                       
   } 
-  for(armangle = 90; armangle>=5; armangle-=2)  // and go back   
+  for(armangle = 90; armangle>=5; armangle-=2)    
   {                                
     arm.write(armangle);              
     delay(10);                       
@@ -45,12 +45,12 @@ void loop()
   }
   if difficulty >= 120); //hardest
    {
-   for(armangle = 5; armangle <= 90; armangle += 3) // tells the arm to go from 5 degrees to 90 
-  {                                                          // The potentiometer controls the speed/difficulty
+   for(armangle = 5; armangle <= 90; armangle += 3)  
+  {                                                          
     arm.write(armangle);           
     delay(10);                       
   } 
-  for(armangle = 90; armangle>=5; armangle-=3)  // and go back   
+  for(armangle = 90; armangle>=5; armangle-=3)     
   {                                
     arm.write(armangle);              
     delay(10);                       
