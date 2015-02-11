@@ -1,0 +1,59 @@
+#include <Servo.h> 
+ 
+Servo arm; 
+
+int armangle = 0;// the position of the "arm"
+ 
+float difficulty;    // float which controls the speed and difficulty
+
+int pin = 0; 
+ 
+void setup() 
+{ 
+  arm.attach(9);   
+} 
+ 
+void loop() 
+{ 
+  difficulty = analogRead(potpin);           
+  difficulty = map(difficulty, 0, 1000, 0, 180);     // scales the difficulty to 3 options 
+  if (difficulty <= 60); //normal
+ {
+   for(armangle = 5; armangle <= 90; armangle += 1) // tells the arm to go from 5 degrees to 90 
+  {                                                          // The potentiometer controls the speed/difficulty
+    arm.write(armangle);           
+    delay(10);                       
+  } 
+  for(armangle = 90; armangle>=5; armangle-=1)  // and go back   
+  {                                
+    arm.write(armangle);              
+    delay(10);                       
+    } 
+  }
+  if difficulty <= 120 && difficulty > 60); //hard 
+   {
+   for(armangle = 5; armangle <= 90; armangle += 2) // tells the arm to go from 5 degrees to 90 
+  {                                                          // The potentiometer controls the speed/difficulty
+    arm.write(armangle);           
+    delay(10);                       
+  } 
+  for(armangle = 90; armangle>=5; armangle-=2)  // and go back   
+  {                                
+    arm.write(armangle);              
+    delay(10);                       
+    } 
+  }
+  if difficulty >= 120); //hardest
+   {
+   for(armangle = 5; armangle <= 90; armangle += 3) // tells the arm to go from 5 degrees to 90 
+  {                                                          // The potentiometer controls the speed/difficulty
+    arm.write(armangle);           
+    delay(10);                       
+  } 
+  for(armangle = 90; armangle>=5; armangle-=3)  // and go back   
+  {                                
+    arm.write(armangle);              
+    delay(10);                       
+    } 
+  }
+}
