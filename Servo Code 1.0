@@ -16,7 +16,7 @@ void setup()
 void loop() 
 { 
   difficulty = analogRead(potpin);           
-  difficulty = map(difficulty, 0, 1000, 0, 180);     // scales the difficulty to 3 options 
+  difficulty = map(difficulty, 0, 1000, 1, 3);     // scales the difficulty to 3 options 
   if (difficulty <= 60); //normal
  {
    for(armangle = 5; armangle <= 90; armangle += 1) // tells the arm to go from 5 degrees to 90 
@@ -30,7 +30,7 @@ void loop()
     delay(10);                       
     } 
   }
-  if difficulty <= 120 && difficulty > 60); //hard 
+  if difficulty == 2; //hard 
    {
    for(armangle = 5; armangle <= 90; armangle += 2)
   {                                                          
@@ -43,7 +43,7 @@ void loop()
     delay(10);                       
     } 
   }
-  if difficulty >= 120); //hardest
+  if difficulty == 3; //hardest
    {
    for(armangle = 5; armangle <= 90; armangle += 3)  
   {                                                          
