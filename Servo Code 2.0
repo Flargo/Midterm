@@ -6,7 +6,7 @@ Servo arm;
 int armangle = 0;// the position of the "arm"
  
 float difficulty;    // float which controls the speed and difficulty
-int maxi = 90;
+int maxi = 90;    //
 int mini = 5;
 
 int pin = 0; 
